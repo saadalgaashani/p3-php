@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculateur</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .body{
+           .bpmf-huninn-regular {
+  font-family: "Bpmf Huninn", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+        }
+        .project-title {
+            text-align: center;
+            margin-top: 100px;
+            
+        }
+        .calc-body {
+            width: 400px;
+            height: 350px;
+            background: rgb(243, 243, 243);
+            margin: auto;
+            border: 1px solid gray;
+            padding: 10px;
+
+
+
+        }
+
+        .calc-screen {
+            
+            height: 60px;
+            background: white;
+            border: 1px solid gray;
+            margin-bottom: 20px;
+            font-size: 25px;
+             display: flex;
+            align-items:center;
+            padding-left: 20px;
+
+           
+        }
+        .calc-buttons {
+            float: left;
+            width: 300px;
+
+
+            
+        }
+        .calc-buttons span{
+            width: 30%;
+            height: 50px;
+            background: white;
+            border: 1px solid #000;
+            float: right;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .calc-buttons-op {
+
+            float: right;
+            width: 99px;
+            display: FLEX;
+            flex-direction: column;
+
+
+        }
+        .calc-buttons-op span {
+
+            height: 44px;
+            background: royalblue;
+            color: #fff;
+            border: 1px solid #000;
+            margin: 4px;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            font-size: 25px;
+            
+
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+
+    <h1 class="project-title">Calculator</h1>
+    <div class=" calc-body">
+        <div class="calc-screen" id="screen"></div>
+        <div class="calc-buttons-op">
+            <SPAN onclick="getValue(event)">+</SPAN>
+            <SPAn onclick="getValue(event)">-</SPAn>
+            <SPAN onclick="getValue(event)">X</SPAN>
+            <SPAN onclick="getValue(event)">/</SPAN>
+        </div>
+        <div class="calc-buttons">
+        <span onclick="clearAll()">AC</span>
+        <span onclick="calc()">=</span>
+        <span onclick="getValue(event)">9</span>
+        <span onclick="getValue(event)">8</span>
+        <span onclick="getValue(event)">7</span>
+        <span onclick="getValue(event)">6</span>
+        <span onclick="getValue(event)">5</span>
+        <span onclick="getValue(event)">4</span>
+        <span onclick="getValue(event)">3</span>
+        <span onclick="getValue(event)">2</span>
+        <span onclick="getValue(event)">1</span>
+        <span onclick="getValue(event)">0</span>
+    
+    </div>
+        
+
+    </div>
+
+ 
+    
+
+
+
+
+<script src="eerste.js"></script>
+
+</body>
+</html>
