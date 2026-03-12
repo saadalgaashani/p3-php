@@ -5,16 +5,3 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Notities</title>
     <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-
-
-
-
-
-
-
-
-    
-</body>
-</html>
