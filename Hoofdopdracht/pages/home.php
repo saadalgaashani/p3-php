@@ -1,39 +1,26 @@
+<?php include __DIR__ . "/../includes/header.php"; ?>
+<?php include __DIR__ . "/../includes/nav.php"; ?>
+<?php include __DIR__ . "/../includes/db.php"; ?>
 
+<?php
+$stmt = $conn->prepare("SELECT * FROM items");
+$stmt->execute();
 
-
-    <?php include "../includes/header.php";?>
-    <?php include "../includes/nav.php";?>
-    
-
-
-
-<?php [
-
-    [
-        "titel" => "Notitie 1",
-        "beschrijving" => "Dit is de beschrijving van notitie 1",
-        "datum" => "2024-06-01"
-
-    ],
-
-    [
-        "titel" => "Notitie 2",
-        "beschrijving" => "Dit is de beschrijving van notitie 2",
-        "datum" => "2024-06-01"
-
-    ],
-
-]
+$items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<h1>Notities</h1>
 
+<?php if (count($items) > 0) { ?>
+    <ul>
+        <?php foreach ($items as $item) { ?>
+            <li>
+                <?= $item["titel"]; ?> - <?= $item["datum"]; ?> - <?= $item["status"]; ?>
+            </li>
+        <?php } ?>
+    </ul>
+<?php } else { ?>
+    <p>Er zijn nog geen items toegevoegd.</p>
+<?php } ?>
 
-<!-- Hier komt de inhoud van de pagina -->
-
-
-
-
-
-<?php include "../includes/footer.php"; ?>
-</body>
-</html>
+<?php include __DIR__ . "/../includes/footer.php"; ?>

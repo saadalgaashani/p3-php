@@ -1,18 +1,8 @@
-
-
-
-
-
-
-
-
-
 <footer>
-<?php echo date("Y"); ?>
-    
-
-
+    <?php echo date("Y"); ?>
+    <p id="dbTime">Database geladen om: --:--</p>
 </footer>
-    <script src="../js/app.js"></script>
+
+<script src="/p3_php/Hoofdopdracht/js/app.js"></script>
 </body>
 </html>

@@ -2,6 +2,12 @@
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notities</title>
     <?php
 
 $appNaam = "Notities";
@@ -12,7 +18,8 @@ $tagline = "Houd al je notities bij op één plek!";
 
 ?>
 
-
+</head>
+<body>
     <h1>  
       Welkom bij je  <?php echo $appNaam; ?>
     </h1>
@@ -40,3 +47,8 @@ $tagline = "Houd al je notities bij op één plek!";
      
 
      
+    
+</footer>
+    
+</body>
+</html>
