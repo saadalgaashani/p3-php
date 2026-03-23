@@ -4,7 +4,7 @@
     <label>Naam:</label><br>
     <input type="text" id="naam" name="naam" required maxlength="50"> <br>
     <small id="counter">0 / 50</small><br><br>
-
+    <!-- small is als p  maar kleiner -->
 
     <label>Aantal:</label><br>
     <input type="number" name="aantal"><br><br>

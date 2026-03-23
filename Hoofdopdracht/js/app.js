@@ -31,6 +31,8 @@ const counter = document.getElementById("counter");
 if (input && counter) {
     input.addEventListener("input", function () {
         const lengte = input.value.length;
+        // hier zeg je tel  met input (saad) value (4) length (tellen)
         counter.textContent = lengte + " / 50";
+        // hiet zeg je zet de lengte op de scherm met /50
     });
 }
