@@ -1,6 +1,6 @@
-<?php include __DIR__ . "/../includes/header.php"; ?>
-<?php include __DIR__ . "/../includes/nav.php"; ?>
-<?php include __DIR__ . "/../includes/db.php"; ?>
+<?php require __DIR__ . "/../includes/header.php"; ?>
+<?php require __DIR__ . "/../includes/nav.php"; ?>
+<?php require __DIR__ . "/../includes/db.php"; ?>
 
 <?php
 $stmt = $conn->prepare("SELECT * FROM items");
@@ -23,4 +23,4 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <p>Er zijn nog geen items toegevoegd.</p>
 <?php } ?>
 
-<?php include __DIR__ . "/../includes/footer.php"; ?>
+<?php require __DIR__ . "/../includes/footer.php"; ?>

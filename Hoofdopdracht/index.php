@@ -29,7 +29,7 @@ $tagline = "Houd al je notities bij op één plek!";
     <p> Schrijf. Bewaar. Vergeet niets meer.
         <?php echo $tagline; ?>
     </p>
-<footer>
+  <footer>
      
         <P>  <?php $today = date("Y"); echo $today; 
      $appNaam = "Notities";
