@@ -1,4 +1,4 @@
-<footer>
+<footer id="mijnFooter">
     <?php echo date("Y"); ?>
     <p id="dbTime">Database geladen om: --:--</p>
 </footer>

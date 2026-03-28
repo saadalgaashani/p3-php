@@ -1,3 +1,8 @@
+<?php
+ 
+   
+
+?>
 <h1>Toevoegen</h1>
 
 <form method="POST" action="../verwerk.php">

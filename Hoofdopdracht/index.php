@@ -14,8 +14,6 @@ $appNaam = "Notities";
 $trackerType = "Notitie Tracker";
 $tagline = "Houd al je notities bij op één plek!";
 
-
-
 ?>
 
 </head>
@@ -34,20 +32,9 @@ $tagline = "Houd al je notities bij op één plek!";
         <P>  <?php $today = date("Y"); echo $today; 
      $appNaam = "Notities";
         echo " - " . $appNaam; 
-        
-        
-        
-        
+
         
         ?>   </P>
-
-
-        
-     
-     
-
-     
-    
 </footer>
     
 </body>

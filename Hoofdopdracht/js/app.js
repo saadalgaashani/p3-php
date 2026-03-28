@@ -36,3 +36,25 @@ if (input && counter) {
         // hiet zeg je zet de lengte op de scherm met /50
     });
 }
+
+
+// Easter Egg 
+
+const footer = document.getElementById("mijnFooter");
+
+let clickTeller = 0;
+
+if (footer) {
+    footer.addEventListener("click", function() {
+        
+        // 4. Verhoog de teller met 1
+        clickTeller++; 
+        
+        // 5. Check of de teller op 5 staat
+        if (clickTeller === 5) {
+            alert("🐰 Easter Egg gevonden! Backend validatie is belangrijk, maar pauze nemen ook!");
+            
+            clickTeller = 0; 
+        }
+    });
+}
