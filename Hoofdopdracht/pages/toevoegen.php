@@ -1,10 +1,18 @@
-<?php require __DIR__ . "/../includes/header.php"; ?>
-<?php require __DIR__ . "/../includes/nav.php"; ?>
+<?php 
+session_start();
+
+require __DIR__ . "/../includes/header.php"; 
+ require __DIR__ . "/../includes/nav.php"; 
+ 
+ ?>
 
 <h1>Toevoegen</h1>
 
-<?php if (isset($_GET["error"])): ?>
-    <p style="color:red;"><?php echo htmlspecialchars($_GET["error"]); ?></p>
+<?php if (isset($_SESSION["error"])): ?>
+    <p style="color:red;">
+        <?php echo htmlspecialchars($_SESSION["error"]); ?>
+    </p>
+    <?php unset($_SESSION["error"]); ?>
 <?php endif; ?>
 
 <form method="POST" action="/p3_php/Hoofdopdracht/verwerk.php" id="mijnForm">

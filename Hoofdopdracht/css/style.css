@@ -2,3 +2,12 @@
     background-color: #121212;
     color: rgb(142, 21, 21);
 }
+/* timeout voor flash berichten */
+.flash {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.flash.hide {
+    opacity: 0;
+}

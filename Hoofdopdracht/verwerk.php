@@ -1,4 +1,5 @@
 <?php
+session_start();
 require __DIR__ . "/includes/db.php";
 
 $fouten = [];
@@ -32,12 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             ":datum" => $datum,
             ":status" => $status
         ]);
-
-        header("Location: /p3_php/Hoofdopdracht/pages/home.php?success=1");
+           $_SESSION["success"] = "Item succesvol toegevoegd!";
+        header("Location: /p3_php/Hoofdopdracht/pages/home.php");
         exit;
     } else {
-        $error = urlencode(implode(" ", $fouten));
-        header("Location: /p3_php/Hoofdopdracht/pages/toevoegen.php?error=$error&titel=" . urlencode($titel));
+        $_SESSION["error"] = implode(" ", $fouten);
+        header("Location: /p3_php/Hoofdopdracht/pages/toevoegen.php");
         exit;
     }
 

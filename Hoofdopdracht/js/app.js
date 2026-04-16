@@ -69,3 +69,14 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.innerText = "Bezig..."; //veranderen tekst
     });
 });
+
+// timeout voor flash berichten
+
+
+    const flash = document.getElementById("flash-message");
+
+    if (flash) {
+        setTimeout(() => {
+            flash.classList.add("hide");
+        }, 3000); // 3000 milliseconden = 3 seconden
+    }
