@@ -7,7 +7,7 @@ $datum = 20260415;
 $status = "nieuw";
 
 // 3) Prepared statement (vul de placeholders aan)
-// placeholders
+// placeholders is een leeg veld in SQL query. dus hier beneden ik maak in de titel kolom een placehonder om straks een waarde te geven.
 $sql = "INSERT INTO items (titel, datum, status) VALUES (:titel, :datum, :status)";
 // prepared statement
 $stmt = $conn->prepare($sql);
@@ -17,7 +17,8 @@ $stmt = $conn->prepare($sql);
 $stmt->execute([
      ":titel" => $titel,
     ":datum" => $datum,
-    ":status" => $status
+    ":status" => $status,
+    // (:placeholder) => variabele (waarde)
 ]);
 
-echo "Insert gelukt (als je geen error ziet).";
+echo "Insert gelukt ";
