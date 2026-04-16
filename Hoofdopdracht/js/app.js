@@ -58,3 +58,14 @@ if (footer) {
         }
     });
 }
+//Disable click
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("mijnForm");
+    const btn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", function () {
+        btn.disabled = true;        // aanzetten
+        btn.innerText = "Bezig..."; //veranderen tekst
+    });
+});
