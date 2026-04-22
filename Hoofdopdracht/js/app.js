@@ -1,9 +1,20 @@
 // Dark mode
 const knop = document.getElementById("darkModeBtn");
 
+// bij laden van pagina: opgeslagen keuze toepassen
+if (localStorage.getItem("darkMode") === "aan") {
+    document.body.classList.add("dark-mode");
+}
+
 if (knop) {
-    knop.addEventListener("click", function() {
+    knop.addEventListener("click", function () {
         document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+            localStorage.setItem("darkMode", "aan");
+        } else {
+            localStorage.setItem("darkMode", "uit");
+        }
     });
 }
 
@@ -77,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (flash) {
         setTimeout(() => {
+            // hier zeg je voer het code uit na bepalde tijd
             flash.classList.add("hide");
         }, 3000); // 3000 milliseconden = 3 seconden
     }

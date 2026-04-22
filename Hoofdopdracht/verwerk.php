@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $titel = trim($_POST["titel"] ?? "");
     $status = trim($_POST["status"] ?? "");
-    $datum = (int) date("Ymd");
+    $datum = (int) date("Y-m-d");
 
     // validatie
     if ($titel === "") {

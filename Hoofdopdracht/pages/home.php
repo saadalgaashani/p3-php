@@ -49,6 +49,9 @@ $tagline = "Houd al je notities bij op één plek!";
                 <?php echo htmlspecialchars($item["titel"]); ?>
                 - <?php echo htmlspecialchars($item["datum"]); ?>
                 - <?php echo htmlspecialchars($item["status"]); ?>
+                <a href="/p3_php/Hoofdopdracht/verwijderen.php?id=<?php echo $item['id']; ?>"
+             onclick="return confirm('Weet je zeker dat je deze notitie wilt verwijderen?');">
+             Verwijderen</a>
             </li>
         <?php endforeach; ?>
     </ul>
