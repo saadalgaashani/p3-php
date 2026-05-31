@@ -92,3 +92,34 @@ document.addEventListener("DOMContentLoaded", function () {
             flash.classList.add("hide");
         }, 3000); // 3000 milliseconden = 3 seconden
     }
+
+
+
+    
+// BONUS: Toggle Edit Mode
+// ==========================================
+// BONUS: Toggle Edit Mode (Foutloze versie)
+// ==========================================
+document.addEventListener("DOMContentLoaded", function () {
+    const editBtn = document.getElementById("editBtn");
+
+    // We voeren de code PAS uit als editBtn daadwerkelijk op de pagina bestaat!
+    if (editBtn) {
+        editBtn.addEventListener("click", function () {
+            const saveBtn = document.getElementById("saveBtn");
+            const editFields = document.querySelectorAll(".edit-field");
+
+            // Loop door alle invoervelden heen en haal readonly weg
+            editFields.forEach(function (field) {
+                field.removeAttribute("readonly");
+                field.style.borderColor = "lightgreen"; // Groene rand als indicatie
+            });
+
+            // Verberg de 'Bewerken' knop en toon de echte 'Opslaan' knop
+            editBtn.style.display = "none";
+            if (saveBtn) {
+                saveBtn.style.display = "inline-block";
+            }
+        });
+    }
+});

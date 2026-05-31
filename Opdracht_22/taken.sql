@@ -1,0 +1,7 @@
+CREATE TABLE taken (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    naam VARCHAR(255) NOT NULL,
+    beschrijving VARCHAR(100) NOT NULL,
+    statuse  VARCHAR(255) NOT NULL 
+);
+    

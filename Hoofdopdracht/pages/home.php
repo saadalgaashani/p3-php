@@ -42,16 +42,21 @@ $tagline = "Houd al je notities bij op één plek!";
 <h2>Notities</h2>
 
 <?php if (count($items) > 0): ?>
-    <ul>
+<ul>
         <?php foreach ($items as $item): ?>
             <li>
-                <!-- htmlspecialchars om de hakers te voorkomen ( de code in het invulveld wordt normaal tekst) -->
                 <?php echo htmlspecialchars($item["titel"]); ?>
                 - <?php echo htmlspecialchars($item["datum"]); ?>
                 - <?php echo htmlspecialchars($item["status"]); ?>
+                
+                <a href="edit.php?id=<?php echo $item['id']; ?>" style="margin-left: 15px; color: lightgreen;">Bewerken</a>
+                
+                <span style="color: #666;"> | </span>
+
                 <a href="/p3_php/Hoofdopdracht/verwijderen.php?id=<?php echo $item['id']; ?>"
-             onclick="return confirm('Weet je zeker dat je deze notitie wilt verwijderen?');">
-             Verwijderen</a>
+                   onclick="return confirm('Weet je zeker dat je deze notitie wilt verwijderen?');" style="color: red;">
+                   Verwijderen
+                </a>
             </li>
         <?php endforeach; ?>
     </ul>
