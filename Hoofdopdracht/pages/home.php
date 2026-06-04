@@ -43,23 +43,22 @@ $tagline = "Houd al je notities bij op één plek!";
 
 <?php if (count($items) > 0): ?>
 <ul>
-        <?php foreach ($items as $item): ?>
-            <li>
-                <?php echo htmlspecialchars($item["titel"]); ?>
-                - <?php echo htmlspecialchars($item["datum"]); ?>
-                - <?php echo htmlspecialchars($item["status"]); ?>
-                
-                <a href="edit.php?id=<?php echo $item['id']; ?>" style="margin-left: 15px; color: lightgreen;">Bewerken</a>
-                
-                <span style="color: #666;"> | </span>
+    <?php foreach ($items as $item): ?>
+        <li>
+            <?php echo htmlspecialchars($item["titel"]); ?>
+            - <?php echo htmlspecialchars($item["datum"]); ?>
+            - <?php echo htmlspecialchars($item["status"]); ?>
+            
+            <a href="edit.php?id=<?php echo $item['id']; ?>" style="margin-left: 15px; color: lightgreen;">Bewerken</a>
+            
+            <span style="color: #666;"> | </span>
 
-                <a href="/p3_php/Hoofdopdracht/verwijderen.php?id=<?php echo $item['id']; ?>"
-                   onclick="return confirm('Weet je zeker dat je deze notitie wilt verwijderen?');" style="color: red;">
-                   Verwijderen
-                </a>
-            </li>
-        <?php endforeach; ?>
-    </ul>
+            <a href="/p3_php/Hoofdopdracht/verwijderen.php?id=<?php echo $item['id']; ?>" class="delete-btn" style="color: red;">
+                Verwijderen
+            </a>
+        </li>
+    <?php endforeach; ?>
+</ul>
 <?php else: ?>
     <p>Er zijn nog geen items toegevoegd.</p>
 <?php endif; ?>

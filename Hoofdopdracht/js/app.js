@@ -123,3 +123,23 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+
+// BONUS: Confirm Delete via addEventListener
+// Selecteer alle verwijderlinks met de class 'delete-btn'
+    const deleteButtons = document.querySelectorAll(".delete-btn");
+
+    // Loop door alle gevonden verwijderknoppen heen
+    deleteButtons.forEach(function (button) {
+        // Luister met addEventListener naar een klik op de knop
+        button.addEventListener("click", function (e) {
+            
+            // Toon de confirm pop-up
+            const bevestig = confirm("Weet je zeker dat je deze notitie wilt verwijderen?");
+            
+            // Als de gebruiker op 'Annuleren' klikt, stoppen we de actie
+            if (bevestig === false) {
+                e.preventDefault(); // Zorgt dat de browser NIET naar verwijderen.php gaat
+            }
+        });
+    });
