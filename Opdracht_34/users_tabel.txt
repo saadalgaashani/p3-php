@@ -1,0 +1,7 @@
+users
+id  INT
+username VARCHER
+password VARCHER
+email     VARCHER
+telefoon_nummer  INT
+plaats  VARCHER
