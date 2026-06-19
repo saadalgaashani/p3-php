@@ -7,7 +7,7 @@ require_once __DIR__ . "/../includes/db.php";
 require_once __DIR__ . "/../includes/header.php";
 require_once __DIR__ . "/../includes/nav.php";
 
-// Stap 1 – ID ontvangen via de URL
+// Stap 1 – ID ontvangen via de URL om te kunnen bepalen welke item wel je roepen.
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
 
-        // Haal precies één item op
+
         $item = $stmt->fetch(PDO::FETCH_ASSOC);
 
     } catch (PDOException $e) {
@@ -30,7 +30,7 @@ if (isset($_GET['id'])) {
     <h1>Notitie Aanpassen (Edit)</h1>
 
     <?php 
-    // Controleer of het item daadwerkelijk bestaat in de database
+    // Controleer of het item daadwerkelijk ( beteken of het all bestaaat) bestaat in de database
     if (isset($item) && $item) { ?>
         
 <form action="../edit_verwerk.php" method="POST" style="max-width: 500px;">            

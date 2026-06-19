@@ -143,3 +143,18 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    // Haal de HTML elementen op
+const wachtwoordInput = document.getElementById('wachtwoord');
+const toonWachtwoordCheckbox = document.getElementById('toonWachtwoord');
+
+// Luister naar een verandering (klikken) op de checkbox
+toonWachtwoordCheckbox.addEventListener('change', function() {
+    // Als de checkbox is aangevinkt, maak er tekst van
+    if (this.checked) {
+        wachtwoordInput.type = 'text';
+    } else {
+        // Als de checkbox uit staat, maak er weer een verborgen wachtwoord van
+        wachtwoordInput.type = 'password';
+    }
+});
