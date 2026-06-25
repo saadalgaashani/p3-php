@@ -14,32 +14,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-
-
-    if (strlen($username) < 3) {
+     if (strlen($username) < 3) {
         echo "<p>Fout: Gebruikersnaam moet minimaal 3 karakters hebben.</p>";
         exit;
     }
-    
-    $hash = password_hash($wachtwoord, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users (username, password) VALUES (:username, :wachtwoord)";
-    $stmt = $conn->prepare($sql);
+
+        
+
+
+
+    $sql = "SELECT * FROM users WHERE username = :username";
+     $stmt = $conn->prepare($sql);
     $stmt->execute([
-        ':username' => $username,
-        ':wachtwoord' => $hash
+        'username' => $username,
+        
     ]);
-    
-    echo "<p>Gebruiker succesvol toegevoegd!</p>";
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+if ($user && password_verify($wachtwoord, $user['password'])) {
+    echo "Inloggen succesvol!";
+} else {
+    echo "Fout: verkeerde gebruikersnaam or wachtwoord!";
 }
-?>  
+exit;
+
+
+}
+?>
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>registreren</title>
+    <title>inlogen</title>
 </head>
 <body>
     <form method="POST">
@@ -65,11 +79,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        <label for="toonWachtwoord">zichtbaar maken</label>
        <br><br>
 
-        <button type="submit">registreren</button>
-    </form>
+        <button type="submit">LOGIN</button> <br>
+    </form> <br>
+
 
     
 
 </body>
+
 </html>
 <?php require __DIR__ . "/../includes/footer.php"; ?>
