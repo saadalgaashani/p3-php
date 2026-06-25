@@ -1,0 +1,5 @@
+1-Gebruiker vult formulier in
+2- de ingevuld data  blijft bij de php
+3- de php kiijkt of er data in de database met het zelfde waarden
+4- de php vergelijkt  de ingevuld data met de bestaat data of ze het zelfde zijn,
+5- als het de ingevuld dat klopt, wordt de gebruiker ingelogd.
