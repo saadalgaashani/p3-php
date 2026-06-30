@@ -64,6 +64,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             maxlength="50"
             value="<?php echo isset($_POST["username"]) ? htmlspecialchars($_POST["username"]) : ""; ?>"
         >
+                    <!-- value is verkorting van if/else op een -->
+
         <br>
         
         <label>Wachtwoord</label><br>
@@ -82,16 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <button type="submit">LOGIN</button> <br>
     </form> <br>
 
-    <script>
-        document.getElementById('toonWachtwoord').addEventListener('change', function() {
-            var input = document.getElementById('wachtwoord');
-            if (this.checked) {
-                input.type = 'text';
-            } else {
-                input.type = 'password';
-            }
-        });
-    </script>
+   
 </body>
 </html>
 
