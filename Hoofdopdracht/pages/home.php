@@ -1,26 +1,26 @@
-
-<?php 
+<?php
 session_start();
 
- require __DIR__ . "/../includes/header.php"; 
- require __DIR__ . "/../includes/nav.php"; 
- require __DIR__ . "/../includes/db.php";
+// Beveiliging: als de sessie 'user' niet bestaat, stuur door naar login.php (staat in dezelfde map)
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit;
+}
+
+require __DIR__ . "/../includes/header.php"; 
+require __DIR__ . "/../includes/db.php";
+require __DIR__ . "/../includes/nav.php";
 
 $stmt = $conn->prepare("SELECT * FROM items ORDER BY id DESC");
 $stmt->execute();
 $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 
 $appNaam = "Notities";
 $trackerType = "Notitie Tracker";
 $tagline = "Houd al je notities bij op één plek!";
 ?>
 
-
-
-
-
-<h1>Welkom bij je <?php echo $appNaam; ?></h1>
+<h1>Welkom bij je <?php echo $appNaam; ?> (Ingelogd als: <?php echo htmlspecialchars($_SESSION['user']); ?>)</h1>
 <h2>Schrijf je ideeën op, zodat je nooit meer iets vergeet <?php echo $trackerType; ?></h2>
 <p>Schrijf. Bewaar. Vergeet niets meer. <?php echo $tagline; ?></p>
 
@@ -38,7 +38,6 @@ $tagline = "Houd al je notities bij op één plek!";
     <?php unset($_SESSION["error"]); ?>
 <?php endif; ?>
 
-
 <h2>Notities</h2>
 
 <?php if (count($items) > 0): ?>
@@ -47,7 +46,7 @@ $tagline = "Houd al je notities bij op één plek!";
         <li>
             <?php echo htmlspecialchars($item["titel"]); ?>
             - <?php echo htmlspecialchars($item["datum"]); ?>
-            - <?php echo htmlspecialchars($item["status"]); ?>
+            - <?php echo htmlspecialchars($item["status"]); ?>  
             
             <a href="edit.php?id=<?php echo $item['id']; ?>" style="margin-left: 15px; color: lightgreen;">Bewerken</a>
             

@@ -1,6 +1,6 @@
 <?php
 session_start();
-
-header("Location: /p3_php/Hoofdopdracht/pages/home.php");
+session_destroy();
+header("Location: /p3_php/Hoofdopdracht/pages/login.php");
 exit;
 ?>

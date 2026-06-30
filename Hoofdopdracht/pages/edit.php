@@ -7,6 +7,7 @@ require_once __DIR__ . "/../includes/db.php";
 require_once __DIR__ . "/../includes/header.php";
 require_once __DIR__ . "/../includes/nav.php";
 
+
 // Stap 1 – ID ontvangen via de URL om te kunnen bepalen welke item wel je roepen.
 if (isset($_GET['id'])) {
     $id = $_GET['id'];

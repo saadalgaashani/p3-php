@@ -2,6 +2,7 @@
 session_start();
 require __DIR__ . "/includes/db.php";
 
+
 $fouten = [];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
