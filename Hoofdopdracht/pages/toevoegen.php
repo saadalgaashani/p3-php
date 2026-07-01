@@ -1,6 +1,6 @@
 <?php 
 session_start();
-// Beveiliging: als de sessie 'user' niet bestaat, stuur door naar login.php (staat in dezelfde map)
+
 if (!isset($_SESSION['user'])) {
     header("Location: login.php");
     exit;

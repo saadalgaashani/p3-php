@@ -3,7 +3,7 @@ session_start();
 
 // Omdat dit bestand in pages/ staat, moeten we omhoog met ../
 require __DIR__ . "/../includes/header.php"; 
-require __DIR__ . "/../includes/nav.php"; 
+require __DIR__ . "/../includes/bezoek_nav.php";
 require __DIR__ . "/../includes/db.php";
 
 $error_message = "";
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($wachtwoord, $user['password'])) {
-            // Stap 1: Session zetten
+
             $_SESSION['user'] = $user['username']; 
             
             // Beiden staan in de map pages/, dus we kunnen direct naar home.php sturen
